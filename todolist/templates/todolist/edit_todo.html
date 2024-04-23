@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Todolsit
+        </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'todolist/styles.css' %}">
+
+    </head>
+    <body>
+        <div class="edit-todo-container">
+            <h2>Todolist</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p}}
+                <button type = "submit">save</button>
+            </form>
+        </div>
+    </body>
+</html>
