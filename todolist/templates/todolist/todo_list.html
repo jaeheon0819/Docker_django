@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
 
 </head>
 <body>
@@ -19,8 +19,8 @@
             {% csrf_token %}
             <label for="title">제목:</label>
             <input type="text" id="title" name="title" required>
-            <label for="description">설명:</label>
-            <input type="text" id="description" name="description">
+            <label for="explanation">설명:</label>
+            <input type="text" id="explanation" name="explanation">
             <label for="deadline">마감일:</label>
             <input type="date" id="deadline" name="deadline">
             <button type="submit">Add</button>
@@ -34,7 +34,7 @@
             {% for todo in todos %}
             <li>
                 <h3>{{ todo.title }}</h3>
-                <p>{{ todo.description }}</p>
+                <p>{{ todo.explanation }}</p>
                 <p>마감일: {{ todo.deadline }}</p>
                 <button>Edit</button>
                 <button>Complete</button>
@@ -51,7 +51,7 @@
             {% for todo in completed_todos %}
             <li>
                 <h3>{{ todo.title }}</h3>
-                <p>{{ todo.description }}</p>
+                <p>{{ todo.explanation }}</p>
                 <p>마감일: {{ todo.deadline }}</p>
                 <button>Delete</button>
             </li>
