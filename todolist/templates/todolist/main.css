@@ -1,4 +1,3 @@
-/* styles.css */
 
 /* 전체 body에 대한 스타일 */
 body {
@@ -20,7 +19,7 @@ body {
     margin: 0;
 }
 
-/* 할 일 추가 폼에 대한 스타일 */
+/* 작업 추가 폼에 대한 스타일 */
 .add-todo-container {
     margin: 20px;
 }
@@ -59,7 +58,7 @@ body {
     background-color: #555;
 }
 
-/* 현재 할 일 목록 및 완료된 할 일 목록에 대한 공통 스타일 */
+/* 현재 작업 목록 및 완료된 작업 목록에 대한 공통 스타일 */
 .todos {
     margin: 20px;
 }
