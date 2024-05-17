@@ -19,5 +19,5 @@ COPY . /code/
 # 정적 파일을 수집
 RUN python manage.py collectstatic --noinput
 
-# 컨테이너가 실행될 때 실행할 명령을 설정합니다.
+# 컨테이너가 실행될 때 실행할 명령을 설정
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
