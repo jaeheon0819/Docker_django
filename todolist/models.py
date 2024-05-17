@@ -6,6 +6,7 @@ class Todo(models.Model):
     explanation = models.TextField(blank=True, null=True)
     end = models. BooleanField(default=False)
     due_date = models.DateTimeField(blank=True, null=True)
+    completed = models.BooleanField(default=False)
     
 
     def __str__(self):

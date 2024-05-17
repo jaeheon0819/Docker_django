@@ -1,0 +1,150 @@
+/* 전체 body에 대한 스타일 */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* 타이틀 섹션에 대한 스타일 */
+.title-container {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title-container h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* 작업 추가 폼에 대한 스타일 */
+.add-todo-container {
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.add-todo-container form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.add-todo-container form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.add-todo-container form input[type="text"],
+.add-todo-container form input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.add-todo-container form input[type="text"]:focus,
+.add-todo-container form input[type="date"]:focus {
+    border-color: #4a90e2;
+}
+
+.add-todo-container form button {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.add-todo-container form button:hover {
+    background-color: #357ab8;
+}
+
+/* 현재 작업 목록 및 완료된 작업 목록에 대한 공통 스타일 */
+.todos {
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.todos h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #4a90e2;
+}
+
+.todos ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todos li {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.todos li:hover {
+    transform: translateY(-5px);
+}
+
+.todos li h3 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.todos li p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.todos li button {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+    margin-right: 5px;
+}
+
+.todos li button:hover {
+    background-color: #357ab8;
+}
+
+/* 전체 삭제 기능에 대한 스타일 */
+.delete-all-container {
+    margin: 40px auto;
+    text-align: center;
+}
+
+.delete-all-container button {
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.delete-all-container button:hover {
+    background-color: #cc0000;
+}

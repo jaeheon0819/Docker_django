@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Todo</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <!-- 타이틀 섹션 -->
+    <div class="title-container">
+        <h1>Todo 리스트</h1>
+    </div>
+
+    <!-- 할 일 추가 폼 -->
+    <div class="add-todo-container">
+        <form action="{% url 'add_todo' %}" method="post">
+            {% csrf_token %}
+            <label for="title">제목:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="explanation">설명:</label>
+            <input type="text" id="explanation" name="explanation">
+            <label for="deadline">마감일:</label>
+            <input type="date" id="deadline" name="deadline">
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <!-- 현재 할 일 목록 -->
+    <div class="todos current-todos">
+        <h2>현재 할 일 목록</h2>
+        <ul>
+            {% for todo in todos %}
+            <li>
+                <h3>{{ todo.title }}</h3>
+                <p>{{ todo.explanation }}</p>
+                <p>마감일: {{ todo.due_date }}</p>
+                <button>Edit</button>
+                <button>Complete</button>
+                <button>Delete</button>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- 완료된 할 일 목록 -->
+    <div class="todos completed-todos">
+        <h2>완료된 할 일 목록</h2>
+        <ul>
+            {% for todo in completed_todos %}
+            <li>
+                <h3>{{ todo.title }}</h3>
+                <p>{{ todo.explanation }}</p>
+                <p>마감일: {{ todo.due_date }}</p>
+                <button>Delete</button>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- 전체 삭제 기능 -->
+    <div class="delete-all-container">
+        <button>Delete All</button>
+    </div>
+</body>
+</html>

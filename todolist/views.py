@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Todo
-from .forms import TodoForm # type: ignore
+from .forms import TodoForm
 
 def todo_list(request):
-    todos = Todo.objects.filter(completed = False)
+    todos = Todo.objects.filter(completed=False)
     completed_todos = Todo.objects.filter(completed=True)
-    return render(request, 'todolist/todo_list.html', {'todos': todos, 'completed_todos':completed_todos})
+    return render(request, 'todolist/todo_list.html', {'todos': todos, 'completed_todos': completed_todos})
 
 def add_todo(request):
     if request.method == 'POST':
@@ -15,10 +15,10 @@ def add_todo(request):
             return redirect('todo_list')
     else:
         form = TodoForm()
-    return render(request, 'todo/add_todo.html', {'form': form})
+    return render(request, 'todolist/add_todo.html', {'form': form})
 
 def edit_todo(request, todo_id):
-    todo=get_object_or_404(Todo, id=todo_id)
+    todo = get_object_or_404(Todo, id=todo_id)
     if request.method == 'POST':
         form = TodoForm(request.POST, instance=todo)
         if form.is_valid():
@@ -35,13 +35,9 @@ def complete_todo(request, todo_id):
     return redirect('todo_list')
 
 def delete_completed(request):
-    Todo.objects.filter(complted=True).delete()
+    Todo.objects.filter(completed=True).delete()
     return redirect('todo_list')
 
 def delete_all(request):
     Todo.objects.all().delete()
-    return redirect('todo_lsit')
-
-
-
-
+    return redirect('todo_list')
